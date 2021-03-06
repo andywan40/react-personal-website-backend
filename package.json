@@ -15,5 +15,8 @@
     "start": "node app.js"
   },
   "author": "andrew",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "10.16.3"
+  },
 }
