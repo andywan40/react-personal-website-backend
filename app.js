@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
 
 const db = config.database;
-let connection = mysql.createConnection({
+let connection = mysql.createPool({
   host     : db.host,
   user     : db.user,
   database : db.database,
