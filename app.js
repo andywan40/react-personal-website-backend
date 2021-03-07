@@ -3,16 +3,18 @@ const app = express();
 const cors = require('cors');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const config = require('./config.js');
 const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
 
+const db = config.database;
 let connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  database : 'personal_backend',
-  password : 'password'
+  host     : db.host,
+  user     : db.user,
+  database : db.database,
+  password : db.password
 });
 
 
