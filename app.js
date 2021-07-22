@@ -18,8 +18,7 @@ let connection = mysql.createPool({
 });
 
 
-app.post("/submitMessage", (req, res) => {
-	console.log(req.body);
+app.post("/messages", (req, res) => {
 	let infoData = {
 		name: req.body.name,
 		email: req.body.email,
